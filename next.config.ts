@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   // Disable server-side features
   trailingSlash: true,
   
+  // Allow cross-origin requests from network IP during development
+  allowedDevOrigins: ['192.168.4.25'],
+  
   // Handle images for static export
   images: {
     unoptimized: true,
@@ -21,6 +24,11 @@ const nextConfig: NextConfig = {
   // Disable ESLint during build to avoid deployment failures
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  
+  // Optimize react-icons imports to prevent chunk loading errors
+  experimental: {
+    optimizePackageImports: ['react-icons'],
   },
   
   // Optional: Configure redirects if needed
